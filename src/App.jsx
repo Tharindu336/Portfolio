@@ -1,15 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { BarChart3, ExternalLink, FolderKanban, Github, Home, Linkedin, Mail, Moon, Radar, Sun } from "lucide-react";
+import { ExternalLink, Github, Linkedin, Moon, Sun } from "lucide-react";
 
 const titles = ["EMERGING DATA SCIENTIST", "SQA ANALYST", "DATA ANALYST", "DIGITAL CREATOR"];
-
-const nav = [
-  { label: "Home", icon: Home, href: "#home" },
-  { label: "Projects", icon: FolderKanban, href: "#projects" },
-  { label: "Analytics", icon: BarChart3, href: "#analytics" },
-  { label: "Contact", icon: Mail, href: "#links" }
-];
 
 const repositoryProjects = [
   {
@@ -122,9 +115,7 @@ export default function App() {
         }`}
       />
 
-      <Sidebar isDark={isDark} />
-
-      <div className="relative z-10 px-4 pb-24 pt-6 sm:px-6 lg:ml-24 lg:px-8 lg:pb-10">
+      <div className="relative z-10 px-4 pb-12 pt-6 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-5">
           <TopBar isDark={isDark} setIsDark={setIsDark} />
           <Hero />
@@ -157,34 +148,6 @@ function TopBar({ isDark, setIsDark }) {
         </button>
       </div>
     </header>
-  );
-}
-
-function Sidebar({ isDark }) {
-  return (
-    <>
-      <aside className={`fixed left-0 top-0 z-30 hidden h-screen w-24 border-r border-cyan/15 backdrop-blur-xl lg:block ${isDark ? "bg-black/70" : "bg-white/70"}`}>
-        <nav className="flex h-full flex-col items-center justify-center gap-5">
-          <div className="absolute top-8 grid h-10 w-10 place-items-center border border-cyan/50 text-cyan shadow-cyan">
-            <Radar size={19} />
-          </div>
-          {nav.map(({ label, icon: Icon, href }) => (
-            <a key={label} href={href} aria-label={label} className="group grid h-12 w-12 place-items-center border border-slate-800 bg-slate-950/70 text-slate-500 transition duration-200 hover:border-cyan/70 hover:text-cyan hover:shadow-cyan">
-              <Icon size={20} strokeWidth={1.7} />
-            </a>
-          ))}
-          <div className="absolute bottom-8 h-28 w-px bg-gradient-to-b from-transparent via-cyan/70 to-transparent" />
-        </nav>
-      </aside>
-
-      <nav className={`fixed bottom-4 left-1/2 z-40 flex -translate-x-1/2 gap-2 border border-cyan/20 p-2 shadow-cyan backdrop-blur-xl lg:hidden ${isDark ? "bg-black/85" : "bg-white/85"}`}>
-        {nav.map(({ label, icon: Icon, href }) => (
-          <a key={label} href={href} aria-label={label} className="grid h-11 w-12 place-items-center text-slate-400 hover:text-cyan">
-            <Icon size={19} strokeWidth={1.7} />
-          </a>
-        ))}
-      </nav>
-    </>
   );
 }
 
