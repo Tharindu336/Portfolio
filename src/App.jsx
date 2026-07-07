@@ -84,6 +84,29 @@ const repositoryProjects = [
   }
 ];
 
+const stackGroups = [
+  {
+    title: "Core Stack",
+    items: ["Python", "Java", "React", "JavaScript", "TypeScript"]
+  },
+  {
+    title: "AI / Data",
+    items: ["Jupyter Notebook", "Machine Learning", "Regression Models", "Data Analysis", "Prolog"]
+  },
+  {
+    title: "App / Backend",
+    items: ["React Native", "Expo", "Spring Boot", "Tkinter", "REST Backend"]
+  },
+  {
+    title: "Frontend Tools",
+    items: ["Vite", "Tailwind CSS", "Framer Motion", "Lucide Icons", "Responsive UI"]
+  },
+  {
+    title: "Workflow",
+    items: ["Git", "GitHub", "Vercel", "VS Code", "npm"]
+  }
+];
+
 export default function App() {
   const [isDark, setIsDark] = useState(true);
 
@@ -106,6 +129,7 @@ export default function App() {
           <TopBar isDark={isDark} setIsDark={setIsDark} />
           <Hero />
           <StatsStrip />
+          <StackTools />
           <ProjectGrid />
         </div>
       </div>
@@ -187,7 +211,7 @@ function Hero() {
           <div className="border border-cyan/20 bg-cyan/5 p-4">
             <p className="font-display text-[0.66rem] uppercase tracking-[0.28em] text-slate-500">Education</p>
             <p className="mt-3 text-sm leading-6 text-slate-300">
-              Bachelor of Science Honors in Information Technology, focused on emerging data science, quality analysis, AI systems, and product interfaces.
+              Bachelor of Science Honors in Information Technology, focused on emerging data science, quality analysis, AI systems, Python, Java, React, and product interfaces.
             </p>
           </div>
         </div>
@@ -234,7 +258,7 @@ function StatsStrip() {
     ["Academic Path", "BSc IT", "text-cyan"],
     ["Data Science", "Emerging", "text-magenta"],
     ["GitHub Projects", "10+", "text-cyan"],
-    ["Focus Areas", "AI / SQA", "text-cyan"]
+    ["Core Stack", "Python Java React", "text-cyan"]
   ];
 
   return (
@@ -245,6 +269,37 @@ function StatsStrip() {
           <p className={`mt-2 font-display text-3xl font-black ${color}`}>{value}</p>
         </div>
       ))}
+    </section>
+  );
+}
+
+function StackTools() {
+  return (
+    <section className="cyber-panel p-5 sm:p-6">
+      <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <p className="section-label">Stack & Toolchain</p>
+          <h2 className="mt-2 font-display text-2xl font-black uppercase tracking-[0.16em] text-white">Technologies Used</h2>
+        </div>
+        <span className="border border-magenta/30 px-3 py-1 font-display text-[0.66rem] uppercase tracking-[0.24em] text-magenta shadow-magenta">
+          Python / Java / React
+        </span>
+      </div>
+
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+        {stackGroups.map((group) => (
+          <div key={group.title} className="border border-cyan/15 bg-black/30 p-4">
+            <h3 className="font-display text-xs font-bold uppercase tracking-[0.26em] text-cyan">{group.title}</h3>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {group.items.map((item) => (
+                <span key={item} className="border border-slate-700/70 bg-slate-950/50 px-2.5 py-1.5 font-display text-[0.66rem] uppercase tracking-[0.16em] text-slate-300">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }

@@ -77,11 +77,13 @@ body {
 }
 
 .theme-light .bg-black\/45,
-.theme-light .bg-black\/50 {
+.theme-light .bg-black\/50,
+.theme-light .bg-black\/30 {
   background-color: rgba(255, 255, 255, 0.58);
 }
 
-.theme-light .bg-slate-950\/70 {
+.theme-light .bg-slate-950\/70,
+.theme-light .bg-slate-950\/50 {
   background-color: rgba(255, 255, 255, 0.82);
 }
 
