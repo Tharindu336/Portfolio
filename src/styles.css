@@ -56,3 +56,36 @@ body {
     box-shadow: 0 0 18px rgba(255, 0, 127, 0.32), inset 0 0 18px rgba(255, 0, 127, 0.05);
   }
 }
+
+.theme-light .cyber-panel {
+  border-color: rgba(0, 117, 130, 0.18);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 20px 70px rgba(15, 23, 42, 0.12);
+}
+
+.theme-light .text-white {
+  color: #0f172a;
+}
+
+.theme-light .text-slate-300,
+.theme-light .text-slate-400 {
+  color: #475569;
+}
+
+.theme-light .text-slate-500 {
+  color: #64748b;
+}
+
+.theme-light .bg-black\/45,
+.theme-light .bg-black\/50 {
+  background-color: rgba(255, 255, 255, 0.58);
+}
+
+.theme-light .bg-slate-950\/70 {
+  background-color: rgba(255, 255, 255, 0.82);
+}
+
+.theme-light .border-slate-700,
+.theme-light .border-slate-800 {
+  border-color: rgba(100, 116, 139, 0.35);
+}
